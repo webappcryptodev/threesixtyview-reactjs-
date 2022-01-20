@@ -70,10 +70,13 @@
 
 .model-full-img {
   width: 800px;  
+  transition-duration: 1s;
 }
 
 .model-img {
   width: 450px;
+  z-index: -1;
+  transition-duration: 1s;
 }
 
 .thumb-focus {

@@ -9,7 +9,7 @@ export default function ModelView(props) {
     const [img_num, setImgnum] = useState(1);
     const [screenState, setScreen] = useState(true);
     
-    var oldx = 250,
+    var oldx = 500,
    mousemovemethod = function (e) {     
        console.log(e.pageX) ;
         if(Math.abs(oldx-e.pageX) >= 50) {
