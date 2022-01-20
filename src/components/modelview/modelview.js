@@ -9,10 +9,10 @@ export default function ModelView(props) {
     const [img_num, setImgnum] = useState(1);
     const [screenState, setScreen] = useState(true);
     
-    var oldx = 500,
-   mousemovemethod = function (e) {     
+    var oldx = 500;
+   const mousemovemethod = (e) => {     
        console.log(e.pageX) ;
-        if(Math.abs(oldx-e.pageX) >= 50) {
+        if(Math.abs(oldx-e.pageX) >= 100) {
             if (e.pageX < oldx) {            
                 if(img_num==1){
                     setImgnum(24);
@@ -54,7 +54,7 @@ export default function ModelView(props) {
                 <button className="fullBtn" onClick={()=>setFullScreen()}><i className="material-icons">fullscreen</i></button>
                 </div>
                 <div className="model text-center" > 
-                    <div className="overlay" onDrag={mousemovemethod}  draggable="true" ></div>               
+                    <div className="overlay" onDrag={ mousemovemethod }  draggable="true" ></div>               
                 {
                     !searchState?                    
                     <img className={screenState?'model-full-img':'model-img'}  src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')} />                                    
