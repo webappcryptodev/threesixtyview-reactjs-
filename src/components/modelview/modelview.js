@@ -50,21 +50,22 @@ export default function ModelView(props) {
         <FullScreen handle={viewhandle} onChange={changeScreenState}>
             <div className='model-viewer p-1' >
                 <div className="text-right">
-                <button className="searchBtn" onClick={()=>setSearchState(!searchState)}><span class="glyphicon glyphicon-zoom-in"></span></button>
+                <button className="searchBtn" onClick={()=>setSearchState(!searchState)}><span className="glyphicon glyphicon-zoom-in"></span></button>
                 <button className="fullBtn" onClick={()=>setFullScreen()}><i className="material-icons">fullscreen</i></button>
                 </div>
-                <div className="model text-center" >                
+                <div className="model text-center" > 
+                    <div className="overlay" onDrag={mousemovemethod}  draggable="true" ></div>               
                 {
-                    !searchState?
-                    <img className={screenState?'model-full-img':'model-img'} src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')}  onDrag={mousemovemethod} draggable="true" />                
+                    !searchState?                    
+                    <img className={screenState?'model-full-img':'model-img'}  src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')} />                                    
                     :
-                    <ImageZoom className={screenState?'model-full-img':'model-img'} src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')}  onDrag={mousemovemethod} draggable="true" />                
+                    <ImageZoom className={screenState?'model-full-img':'model-img'} src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')} onDrag={mousemovemethod} draggable='true' />                
                 }
                 </div>
                 <div className="model-thumbnail row text-center">
-                    <img className="thumbnail-img" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+(img_num==1?24:img_num-1)+'.jpg')}  onDrag={mousemovemethod} draggable="true" />                
-                    <img className="thumbnail-img main-thumb" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')}  onDrag={mousemovemethod} draggable="true" />                
-                    <img className="thumbnail-img" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+(img_num==24?1:img_num+1)+'.jpg')}  onDrag={mousemovemethod} draggable="true" />                
+                    <img className="thumbnail-img" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+(img_num==1?24:img_num-1)+'.jpg')}  />                
+                    <img className="thumbnail-img main-thumb" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')} />                
+                    <img className="thumbnail-img" src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+(img_num==24?1:img_num+1)+'.jpg')} draggable="false" />                
                 </div>
             </div>
         </FullScreen>

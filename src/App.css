@@ -73,9 +73,17 @@
   transition-duration: 1s;
 }
 
+.overlay {
+  height: 400px;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+
+}
+
 .model-img {
   width: 450px;
-  z-index: -1;
+  z-index: 0;
   transition-duration: 1s;
 }
 
