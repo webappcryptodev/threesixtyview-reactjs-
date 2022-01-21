@@ -57,7 +57,7 @@ export default function ModelView(props) {
                 <button className="fullBtn" onClick={()=>setFullScreen()}><i className="material-icons">fullscreen</i></button>
                 </div>
                 <div className="model text-center" > 
-                    <div className="overlay" onDrag={ mousemovemethod }  draggable="true" ></div>               
+                    <div className={screenState?'lg-overlay':'overlay'} onDrag={ mousemovemethod }  draggable="true" ></div>               
                 {
                     !searchState?                    
                     <img className={screenState?'model-full-img':'model-img'}  src={require('../../assets/images/'+props.typeofbed+'/'+props.typeofbed+'-'+img_num+'.jpg')} />                                    

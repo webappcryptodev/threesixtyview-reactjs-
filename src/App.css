@@ -78,7 +78,13 @@
   width: 100%;
   z-index: 2;
   position: absolute;
+}
 
+.lg-overlay {
+  height: 800px;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
 }
 
 .model-img {
