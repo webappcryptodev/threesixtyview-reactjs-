@@ -84,7 +84,6 @@
 .model-img {
   width: 450px;
   z-index: 0;
-  transition-duration: 1s;
 }
 
 .thumb-focus {
@@ -119,6 +118,7 @@
 
 @media (max-width:1200px) {
    .col-md-6 {
+      /* /* width: 100%; */
       flex: 100%; 
       max-width: 100%;
   }
